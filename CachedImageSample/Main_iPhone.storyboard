@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hI7-Rh-5MB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="6Pi-hq-YrT">
+            <objects>
+                <viewController id="hI7-Rh-5MB" customClass="CIRootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ueu-tI-5Z3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ckk-T6-Ggr">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DefaultCell" id="Tc5-8Q-too" customClass="CITableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hI7-Rh-5MB" id="P2w-gK-E9d"/>
+                                    <outlet property="delegate" destination="hI7-Rh-5MB" id="ioE-o5-uhN"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-GP-z1k">
+                                <items>
+                                    <navigationItem title="CashedImage" id="2JB-1g-IQg">
+                                        <barButtonItem key="leftBarButtonItem" title="Load" id="yix-bq-C6K">
+                                            <connections>
+                                                <action selector="loadAction:" destination="hI7-Rh-5MB" id="ANV-8I-Yt3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="NnK-CH-TjA">
+                                            <connections>
+                                                <action selector="cancelAction:" destination="hI7-Rh-5MB" id="z4F-2K-zjj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTT-vM-qIx">
+                                <items>
+                                    <barButtonItem title="Clear Memory" id="jRI-KC-3aT">
+                                        <connections>
+                                            <action selector="clearMemoryAction:" destination="hI7-Rh-5MB" id="tBh-go-NH4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Truncate DB" id="S5u-Jn-vMG">
+                                        <connections>
+                                            <action selector="truncateAction:" destination="hI7-Rh-5MB" id="1mS-se-azu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear Table" id="4UY-q7-O9I">
+                                        <connections>
+                                            <action selector="clearTableAction:" destination="hI7-Rh-5MB" id="RHd-cp-lhh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WgG-GP-z1k" firstAttribute="top" secondItem="ueu-tI-5Z3" secondAttribute="top" type="default" id="1kC-tp-tbC"/>
+                            <constraint firstItem="WgG-GP-z1k" firstAttribute="leading" secondItem="ueu-tI-5Z3" secondAttribute="leading" type="default" id="41e-Lv-Sg9"/>
+                            <constraint firstItem="WgG-GP-z1k" firstAttribute="trailing" secondItem="ueu-tI-5Z3" secondAttribute="trailing" type="default" id="AiW-pP-GKV"/>
+                            <constraint firstItem="DTT-vM-qIx" firstAttribute="bottom" secondItem="ueu-tI-5Z3" secondAttribute="bottom" type="default" id="Cwl-S4-aop"/>
+                            <constraint firstItem="ckk-T6-Ggr" firstAttribute="top" secondItem="WgG-GP-z1k" secondAttribute="bottom" type="default" id="ETf-wp-4d4"/>
+                            <constraint firstItem="ckk-T6-Ggr" firstAttribute="leading" secondItem="ueu-tI-5Z3" secondAttribute="leading" type="default" id="FDD-OK-YOB"/>
+                            <constraint firstItem="ckk-T6-Ggr" firstAttribute="bottom" secondItem="DTT-vM-qIx" secondAttribute="top" type="default" id="Ni2-3X-Ydg"/>
+                            <constraint firstItem="DTT-vM-qIx" firstAttribute="trailing" secondItem="ueu-tI-5Z3" secondAttribute="trailing" type="default" id="RIe-DB-MhD"/>
+                            <constraint firstItem="ckk-T6-Ggr" firstAttribute="trailing" secondItem="ueu-tI-5Z3" secondAttribute="trailing" type="default" id="sWJ-NO-IrE"/>
+                            <constraint firstItem="DTT-vM-qIx" firstAttribute="leading" secondItem="ueu-tI-5Z3" secondAttribute="leading" type="default" id="y0n-Uv-FQt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ckk-T6-Ggr" id="NnG-YE-beX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrA-KB-sUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88" y="16"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CIRootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIRootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelAction:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="clearMemoryAction:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="clearTableAction:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="loadAction:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="truncateAction:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CITableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CITableViewCell.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

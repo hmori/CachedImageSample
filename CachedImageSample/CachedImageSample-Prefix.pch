@@ -1,0 +1,27 @@
+//
+// Prefix header for all source files of the 'CachedImageSample' target in the 'CachedImageSample' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+#ifdef DEBUG
+#define LOG(...) NSLog(__VA_ARGS__)
+#define LOG_CURRENT_METHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd))
+#define LOG_TIMER_START(...) fprintf(stderr,"TIMER start -- %s -- (%d)¥n",__STRING(__VA_ARGS__),__LINE__);NSDate *__VA_ARGS__=[NSDate date]
+#define LOG_TIMER_END(...) fprintf(stderr,"TIMER end   -- %s -- (%d): %f s¥n",__STRING(__VA_ARGS__),__LINE__,-[__VA_ARGS__ timeIntervalSinceNow])
+#else
+#define LOG(...)
+#define LOG_CURRENT_METHOD
+#define LOG_TIMER_START(...)
+#define LOG_TIMER_END(...)
+#endif
