@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CIImageManager : NSObject
-+ (CIImageManager *)sharedManager;
+@interface IMImageManager : NSObject
++ (IMImageManager *)sharedManager;
 - (UIImage *)imageOfURL:(NSString *)url;
 - (UIImage *)imageOfURL:(NSString *)url username:(NSString *)username password:(NSString *)password;
 - (void)cancelAllOperation;
@@ -11,7 +11,7 @@
 @end
 
 
-@interface CICachedImageView : UIImageView
+@interface IMCachedImageView : UIImageView
 @property (nonatomic) UIImage *defaultImage;
 @property (nonatomic) UIImage *errorImage;
 @property (nonatomic) NSString *url;

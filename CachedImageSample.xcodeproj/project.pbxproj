@@ -12,14 +12,14 @@
 		B64DA92D17AB8338007E9F3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64DA92C17AB8338007E9F3F /* CoreGraphics.framework */; };
 		B64DA93317AB8338007E9F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B64DA93117AB8338007E9F3F /* InfoPlist.strings */; };
 		B64DA93517AB8338007E9F3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA93417AB8338007E9F3F /* main.m */; };
-		B64DA93917AB8338007E9F3F /* CIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA93817AB8338007E9F3F /* CIAppDelegate.m */; };
+		B64DA93917AB8338007E9F3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA93817AB8338007E9F3F /* AppDelegate.m */; };
 		B64DA93B17AB8338007E9F3F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B64DA93A17AB8338007E9F3F /* Default.png */; };
 		B64DA93D17AB8338007E9F3F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B64DA93C17AB8338007E9F3F /* Default@2x.png */; };
 		B64DA93F17AB8338007E9F3F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B64DA93E17AB8338007E9F3F /* Default-568h@2x.png */; };
 		B64DA94717AB8379007E9F3F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64DA94617AB8379007E9F3F /* Main_iPhone.storyboard */; };
-		B64DA94A17AB8441007E9F3F /* CIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94917AB8441007E9F3F /* CIRootViewController.m */; };
-		B64DA94D17AB84F2007E9F3F /* CITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94C17AB84F2007E9F3F /* CITableViewCell.m */; };
-		B64DA95017ABAC72007E9F3F /* CICachedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94F17ABAC72007E9F3F /* CICachedImageView.m */; };
+		B64DA94A17AB8441007E9F3F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94917AB8441007E9F3F /* RootViewController.m */; };
+		B64DA94D17AB84F2007E9F3F /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94C17AB84F2007E9F3F /* TableViewCell.m */; };
+		B64DA95017ABAC72007E9F3F /* IMCachedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64DA94F17ABAC72007E9F3F /* IMCachedImageView.m */; };
 		B64DA95317ABAF17007E9F3F /* CachedImage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64DA95117ABAF17007E9F3F /* CachedImage.xcdatamodeld */; };
 		B64DA95817ABB59E007E9F3F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64DA95717ABB59D007E9F3F /* CoreData.framework */; };
 		B677E81017AC9DCF008EAA5B /* DefaultImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B677E80E17AC9DCF008EAA5B /* DefaultImage@2x.png */; };
@@ -35,18 +35,18 @@
 		B64DA93217AB8338007E9F3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B64DA93417AB8338007E9F3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B64DA93617AB8338007E9F3F /* CachedImageSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CachedImageSample-Prefix.pch"; sourceTree = "<group>"; };
-		B64DA93717AB8338007E9F3F /* CIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAppDelegate.h; sourceTree = "<group>"; };
-		B64DA93817AB8338007E9F3F /* CIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAppDelegate.m; sourceTree = "<group>"; };
+		B64DA93717AB8338007E9F3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B64DA93817AB8338007E9F3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B64DA93A17AB8338007E9F3F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B64DA93C17AB8338007E9F3F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B64DA93E17AB8338007E9F3F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B64DA94617AB8379007E9F3F /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B64DA94817AB8441007E9F3F /* CIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIRootViewController.h; sourceTree = "<group>"; };
-		B64DA94917AB8441007E9F3F /* CIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIRootViewController.m; sourceTree = "<group>"; };
-		B64DA94B17AB84F2007E9F3F /* CITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CITableViewCell.h; sourceTree = "<group>"; };
-		B64DA94C17AB84F2007E9F3F /* CITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CITableViewCell.m; sourceTree = "<group>"; };
-		B64DA94E17ABAC72007E9F3F /* CICachedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICachedImageView.h; sourceTree = "<group>"; };
-		B64DA94F17ABAC72007E9F3F /* CICachedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICachedImageView.m; sourceTree = "<group>"; };
+		B64DA94817AB8441007E9F3F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		B64DA94917AB8441007E9F3F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		B64DA94B17AB84F2007E9F3F /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		B64DA94C17AB84F2007E9F3F /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		B64DA94E17ABAC72007E9F3F /* IMCachedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMCachedImageView.h; sourceTree = "<group>"; };
+		B64DA94F17ABAC72007E9F3F /* IMCachedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMCachedImageView.m; sourceTree = "<group>"; };
 		B64DA95217ABAF17007E9F3F /* CachedImage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedImage.xcdatamodel; sourceTree = "<group>"; };
 		B64DA95717ABB59D007E9F3F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B677E80E17AC9DCF008EAA5B /* DefaultImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DefaultImage@2x.png"; path = "Resources/DefaultImage@2x.png"; sourceTree = "<group>"; };
@@ -100,13 +100,13 @@
 			isa = PBXGroup;
 			children = (
 				B677E80D17AC9DAF008EAA5B /* Resources */,
-				B64DA94517AB8357007E9F3F /* CachedImage */,
-				B64DA93717AB8338007E9F3F /* CIAppDelegate.h */,
-				B64DA93817AB8338007E9F3F /* CIAppDelegate.m */,
-				B64DA94817AB8441007E9F3F /* CIRootViewController.h */,
-				B64DA94917AB8441007E9F3F /* CIRootViewController.m */,
-				B64DA94B17AB84F2007E9F3F /* CITableViewCell.h */,
-				B64DA94C17AB84F2007E9F3F /* CITableViewCell.m */,
+				B64DA94517AB8357007E9F3F /* ImageManager */,
+				B64DA93717AB8338007E9F3F /* AppDelegate.h */,
+				B64DA93817AB8338007E9F3F /* AppDelegate.m */,
+				B64DA94817AB8441007E9F3F /* RootViewController.h */,
+				B64DA94917AB8441007E9F3F /* RootViewController.m */,
+				B64DA94B17AB84F2007E9F3F /* TableViewCell.h */,
+				B64DA94C17AB84F2007E9F3F /* TableViewCell.m */,
 				B64DA94617AB8379007E9F3F /* Main_iPhone.storyboard */,
 				B64DA92F17AB8338007E9F3F /* Supporting Files */,
 			);
@@ -127,14 +127,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B64DA94517AB8357007E9F3F /* CachedImage */ = {
+		B64DA94517AB8357007E9F3F /* ImageManager */ = {
 			isa = PBXGroup;
 			children = (
-				B64DA94E17ABAC72007E9F3F /* CICachedImageView.h */,
-				B64DA94F17ABAC72007E9F3F /* CICachedImageView.m */,
+				B64DA94E17ABAC72007E9F3F /* IMCachedImageView.h */,
+				B64DA94F17ABAC72007E9F3F /* IMCachedImageView.m */,
 				B64DA95117ABAF17007E9F3F /* CachedImage.xcdatamodeld */,
 			);
-			name = CachedImage;
+			name = ImageManager;
 			sourceTree = "<group>";
 		};
 		B677E80D17AC9DAF008EAA5B /* Resources */ = {
@@ -172,7 +172,7 @@
 		B64DA91D17AB8338007E9F3F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CI;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Hidetoshi Mori";
 			};
@@ -216,10 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64DA93517AB8338007E9F3F /* main.m in Sources */,
-				B64DA93917AB8338007E9F3F /* CIAppDelegate.m in Sources */,
-				B64DA94A17AB8441007E9F3F /* CIRootViewController.m in Sources */,
-				B64DA94D17AB84F2007E9F3F /* CITableViewCell.m in Sources */,
-				B64DA95017ABAC72007E9F3F /* CICachedImageView.m in Sources */,
+				B64DA93917AB8338007E9F3F /* AppDelegate.m in Sources */,
+				B64DA94A17AB8441007E9F3F /* RootViewController.m in Sources */,
+				B64DA94D17AB84F2007E9F3F /* TableViewCell.m in Sources */,
+				B64DA95017ABAC72007E9F3F /* IMCachedImageView.m in Sources */,
 				B64DA95317ABAF17007E9F3F /* CachedImage.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,4 @@
-#import "CICachedImageView.h"
+#import "IMCachedImageView.h"
 #import <CoreData/CoreData.h>
 
 #define CONNECTION_MAX_COUNT 3
@@ -11,25 +11,25 @@
 #define kUserInfoImage @"kUserInfoImage"
 #define kSqliteNameCachedImage @"CachedImage.sqlite"
 #define kModelNameCachedImage @"CachedImage"
-#define kEntityNameCachedImage @"CICachedImage"
+#define kEntityNameCachedImage @"IMCachedImage"
 
 
-#pragma mark - CICachedImage
+#pragma mark - IMCachedImage
 
-@interface CICachedImage : NSManagedObject
+@interface IMCachedImage : NSManagedObject
 @property (nonatomic, retain) NSData * data;
 @property (nonatomic, retain) NSString * url;
 @end
 
-@implementation CICachedImage
+@implementation IMCachedImage
 @dynamic data;
 @dynamic url;
 @end
 
 
-#pragma mark - CIImageRequestOperation
+#pragma mark - IMImageRequestOperation
 
-@interface CIImageRequestOperation : NSOperation
+@interface IMImageRequestOperation : NSOperation
 @property (nonatomic) NSMutableData *data;
 @property (nonatomic) NSString *url;
 @property (nonatomic, readonly) NSURLRequest *request;
@@ -40,7 +40,7 @@
 @end
 
 
-@implementation CIImageRequestOperation {
+@implementation IMImageRequestOperation {
     NSString *_username;
     NSString *_password;
     BOOL _isExecuting;
@@ -144,10 +144,10 @@
 @end
 
 
-#pragma mark - CIImageManager
+#pragma mark - IMImageManager
 
 
-@implementation CIImageManager {
+@implementation IMImageManager {
     NSOperationQueue *_queue;
     NSMutableDictionary *_images;
     
@@ -155,12 +155,12 @@
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
 }
 
-static CIImageManager *_instance = nil; //singleton
+static IMImageManager *_instance = nil; //singleton
 
-+ (CIImageManager *)sharedManager {
++ (IMImageManager *)sharedManager {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance = [[CIImageManager alloc] init];
+        _instance = [[IMImageManager alloc] init];
     });
     return _instance;
 }
@@ -230,9 +230,9 @@ static CIImageManager *_instance = nil; //singleton
         return _images[url] == [NSNull null] ? nil : _images[url];
     }
     
-    __block __weak CIImageManager *weakSelf = self;
+    __block __weak IMImageManager *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        CICachedImage *cachedImage = [weakSelf fetchImageOfURL:url];
+        IMCachedImage *cachedImage = [weakSelf fetchImageOfURL:url];
         if (cachedImage) {
             LOG(@"load from coredata : url=%@", url);
             UIImage *image = [UIImage imageWithData:cachedImage.data];
@@ -288,7 +288,7 @@ static CIImageManager *_instance = nil; //singleton
 
 #pragma mark Private
 
-- (CICachedImage *)fetchImageOfURL:(NSString *)url {
+- (IMCachedImage *)fetchImageOfURL:(NSString *)url {
     
     NSManagedObjectContext *managedObjectContext = [self createManagedObjectContext];
     NSFetchRequest *fetchRequest = [self createFetchRequest:managedObjectContext url:url];
@@ -302,9 +302,9 @@ static CIImageManager *_instance = nil; //singleton
     NSFetchRequest *fetchRequest = [self createFetchRequest:managedObjectContext url:url];
     NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
-    CICachedImage *image = nil;
+    IMCachedImage *image = nil;
     if (results.count) {
-        image = (CICachedImage *)results[0];
+        image = (IMCachedImage *)results[0];
     } else {
         image = [NSEntityDescription insertNewObjectForEntityForName:kEntityNameCachedImage
                                               inManagedObjectContext:managedObjectContext];
@@ -336,13 +336,13 @@ static CIImageManager *_instance = nil; //singleton
 }
 
 - (void)requestWithUrl:(NSString *)url username:(NSString *)username password:(NSString *)password {
-    CIImageRequestOperation *operation = [[CIImageRequestOperation alloc]
+    IMImageRequestOperation *operation = [[IMImageRequestOperation alloc]
                                           initWithURLString:url
                                           username:username
                                           password:password];
     
-    __block __weak CIImageRequestOperation *weakOperation = operation;
-    __block __weak CIImageManager *weakSelf = self;
+    __block __weak IMImageRequestOperation *weakOperation = operation;
+    __block __weak IMImageManager *weakSelf = self;
     operation.completionBlock = ^{
         
         UIImage *image = nil;
@@ -384,10 +384,10 @@ static CIImageManager *_instance = nil; //singleton
 @end
 
 
-#pragma mark - CICachedImageView
+#pragma mark - IMCachedImageView
 
 
-@implementation CICachedImageView {
+@implementation IMCachedImageView {
     UIActivityIndicatorView *_indicator;
 }
 
@@ -436,7 +436,7 @@ static CIImageManager *_instance = nil; //singleton
 
     [self showIndicator];
     
-    UIImage *image = [[CIImageManager sharedManager] imageOfURL:url username:username password:password];
+    UIImage *image = [[IMImageManager sharedManager] imageOfURL:url username:username password:password];
     [self updateImage:image];
 }
 
@@ -447,7 +447,7 @@ static CIImageManager *_instance = nil; //singleton
     UIImage *userInfoImage = notification.userInfo[kUserInfoImage];
     if ([_url isEqualToString:userInfoUrl]) {
         
-        __block __weak CICachedImageView *weakSelf = self;
+        __block __weak IMCachedImageView *weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf updateImage:userInfoImage];
             [weakSelf hideIndicator];

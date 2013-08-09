@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface CITableViewCell : UITableViewCell
+@interface TableViewCell : UITableViewCell
 @property (nonatomic) NSString *imageUrl;
 @end

@@ -1,11 +1,11 @@
-#import "CIAppDelegate.h"
+#import "AppDelegate.h"
 
 void uncaughtExceptionHandler(NSException *exception) {
     LOG(@"CRASH: %@", exception);
     LOG(@"Stack Trace: %@", [exception callStackSymbols]);
 }
 
-@implementation CIAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if DEBUG

@@ -1,8 +1,8 @@
-#import "CITableViewCell.h"
-#import "CICachedImageView.h"
+#import "TableViewCell.h"
+#import "IMCachedImageView.h"
 
-@implementation CITableViewCell {
-    CICachedImageView *_cachedImageView;
+@implementation TableViewCell {
+    IMCachedImageView *_cachedImageView;
 }
 
 -(id)initWithCoder:(NSCoder *)coder {
@@ -13,7 +13,7 @@
 }
 
 - (void)initialize {
-    _cachedImageView = [[CICachedImageView alloc] initWithFrame:(CGRect){10, 10, 68, 68}];
+    _cachedImageView = [[IMCachedImageView alloc] initWithFrame:(CGRect){10, 10, 68, 68}];
     _cachedImageView.defaultImage = [UIImage imageNamed:@"DefaultImage"];
     _cachedImageView.errorImage = [UIImage imageNamed:@"ErrorImage"];
     [self addSubview:_cachedImageView];

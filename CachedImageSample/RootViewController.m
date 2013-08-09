@@ -1,13 +1,13 @@
-#import "CIRootViewController.h"
-#import "CITableViewCell.h"
-#import "CICachedImageView.h"
+#import "RootViewController.h"
+#import "TableViewCell.h"
+#import "IMCachedImageView.h"
 
-@interface CIRootViewController ()
+@interface RootViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation CIRootViewController {
+@implementation RootViewController {
     NSMutableArray *_urls;
     NSOperationQueue *_queue;
 }
@@ -32,7 +32,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell"];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell"];
     NSString *url = [_urls objectAtIndex:indexPath.row];
     cell.textLabel.text = url;
     cell.imageUrl = url;
@@ -47,15 +47,15 @@
 }
 
 - (IBAction)cancelAction:(UIBarButtonItem *)sender {
-    [[CIImageManager sharedManager] cancelAllOperation];
+    [[IMImageManager sharedManager] cancelAllOperation];
 }
 
 - (IBAction)clearMemoryAction:(UIBarButtonItem *)sender {
-    [[CIImageManager sharedManager] clearImages];
+    [[IMImageManager sharedManager] clearImages];
 }
 
 - (IBAction)truncateAction:(UIBarButtonItem *)sender {
-    [[CIImageManager sharedManager] truncateStore];
+    [[IMImageManager sharedManager] truncateStore];
 }
 
 - (IBAction)clearTableAction:(UIBarButtonItem *)sender {
@@ -78,7 +78,7 @@
     NSString *url = [NSString stringWithFormat:@"http://ajax.googleapis.com/ajax/services/search/images?q=cat&v=1.0&rsz=8&start=%d", no*8];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
-    __block __weak CIRootViewController *weakSelf = self;
+    __block __weak RootViewController *weakSelf = self;
     [NSURLConnection
      sendAsynchronousRequest:request
      queue:_queue
